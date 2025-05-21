@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `cities` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-/* Créer une table "todo" */
+/* Créer une table "daily_challenge" */
 CREATE TABLE IF NOT EXISTS `daily_challenge` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `city_code` int(5) NOT NULL,
