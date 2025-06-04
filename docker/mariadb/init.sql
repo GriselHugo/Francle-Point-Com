@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `cities` (
 /* Créer une table "daily_challenge" */
 CREATE TABLE IF NOT EXISTS `daily_challenge` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
-    `city_code` int(5) NOT NULL,
+    `city_code` varchar(5) NOT NULL,
     `date` date NOT NULL,
     `created_at` datetime NOT NULL,
     `updated_at` datetime NOT NULL,
