@@ -1,0 +1,94 @@
+:root {
+  --bg: #ffffff;
+  --bg-header: #f0f0f0;
+  --header-border: #e0e0e0;
+  --text: #1a1a1a;
+}
+
+[data-theme='dark'] {
+  --bg: #1a1a1a;
+  --bg-header: #212121;
+  --header-border: #333333;
+  --text: #ffffff;
+}
+
+header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-header);
+  border-bottom: 1px solid var(--header-border);
+  color: var(--text);
+}
+
+ion-icon {
+  font-size: 1.5rem;
+}
+
+header .title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+header .nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+header .nav button {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+header .nav button.active {
+  background-color: var(--bg);
+  border: 1px solid var(--header-border);
+  border-bottom: none;
+  border-radius: 16px 16px 0 0;
+  color: #ef3240;
+  margin-bottom: -1px;
+  z-index: 10;
+  position: relative;
+}
+
+.nav button::after {
+  content: attr(data-label);
+  position: absolute;
+  top: -1.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--text);
+  color: var(--bg-header);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.nav button:hover::after {
+  opacity: 1;
+}
+
+header .themeToggle {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text);
+}

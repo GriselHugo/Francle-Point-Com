@@ -1,0 +1,76 @@
+:root {
+  --bg: #ffffff;
+  --bg-header: #f0f0f0;
+  --header-border: #e0e0e0;
+  --text: #1a1a1a;
+  --bg-clue: #35a8d9;
+  --bg-clue-correct: #2ecc71;
+}
+
+[data-theme='dark'] {
+  --bg: #1a1a1a;
+  --bg-header: #212121;
+  --header-border: #333333;
+  --text: #ffffff;
+  --bg-clue: #000091;
+  --bg-clue-correct: #009246;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1248px; /* 65% de 1920px */
+}
+
+.clues-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.clue {
+  width: 15%;
+  aspect-ratio: 3/2;
+  background-color: var(--bg-clue);
+  margin: 0 2.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.chevron-up,
+.chevron-down {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-icon {
+  font-size: 2rem;
+}
+
+.clue-text {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 4px;
+  color: var(--text);
+  font-weight: bold;
+}
+
+.clue.correct {
+  background-color: var(--bg-clue-correct);
+}
