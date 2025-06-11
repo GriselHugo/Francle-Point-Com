@@ -15,7 +15,12 @@ function SearchBar({ searchTerm, onSearchChange, suggestions, onSuggestionClick 
         <ul className="suggestions-list">
           {suggestions.map((city, index) => (
             <li key={index} onClick={() => onSuggestionClick(city)}>
-              {city.name}
+              <span className="suggestion-name">
+                {city.name}
+              </span>
+              <span className="suggestion-code-commune">
+                code commune : {city.commune_code}
+              </span>
             </li>
           ))}
         </ul>

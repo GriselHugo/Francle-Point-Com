@@ -49,6 +49,8 @@
 }
 
 .suggestions-list li {
+  display: flex;
+  align-items: center;
   padding: 8px;
   cursor: pointer;
   border-bottom: 0.25px solid var(--header-border);
@@ -60,4 +62,17 @@
 
 .suggestions-list li:hover {
   background-color: var(--header-border);
+}
+
+.suggestion-name {
+  width: 70%;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.suggestion-code-commune {
+  width: 30%;
+  font-size: 0.6rem;
+  color: var(--text);
+  text-align: right;
 }

@@ -41,7 +41,7 @@ function Game({ challenge, onWin }) {
 
   const clues = [
     {
-      label: "Lettre",
+      label: "Première lettre",
       value: (city) => city.name[0].toUpperCase(),
       compare: (a, b) => a.localeCompare(b),
     },
@@ -82,6 +82,7 @@ function Game({ challenge, onWin }) {
           city={guess}
           challenge={challenge}
           clues={clues}
+          isFirstRow={index === 0}
         />
       ))}
     </div>
