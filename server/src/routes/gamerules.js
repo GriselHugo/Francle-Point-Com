@@ -112,12 +112,9 @@ router.get('/search-city', (req, res) => {
   const { name } = req.query;
   const db = require('../database-config');
 
-  // if (!name || name.length < 3) {
-  //   return res.status(400).send('Name must be at least 3 characters long');
-  // }
+  // const query = 'SELECT * FROM cities WHERE name LIKE ? LIMIT 10';
+  const query = 'SELECT * FROM cities WHERE name LIKE ? ORDER BY population DESC LIMIT 10';
 
-  const query = 'SELECT * FROM cities WHERE name LIKE ? LIMIT 10';
-  // const query = 'SELECT * FROM cities WHERE name LIKE ?';
   db.query(query, [`${name}%`], (error, results) => {
     if (error) {
       console.error('Database query error:', error);
