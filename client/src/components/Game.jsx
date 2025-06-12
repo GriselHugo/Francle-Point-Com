@@ -5,7 +5,7 @@ import apiService from "../services/api";
 
 import "../styles/game.css";
 
-function Game({ challenge, onWin }) {
+function Game({ challenge, onWin, alreadyFound }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [guesses, setGuesses] = useState([]);
@@ -32,7 +32,7 @@ function Game({ challenge, onWin }) {
     setGuesses((prevGuesses) => [...prevGuesses, city]);
 
     if (isWin && onWin) {
-      onWin(city);
+      onWin(city, guesses.length + 1);
     }
 
     setSearchTerm("");
@@ -69,14 +69,25 @@ function Game({ challenge, onWin }) {
 
   return (
     <div className="game-container">
-      <SearchBar
+
+      {alreadyFound === false && <SearchBar
         searchTerm={searchTerm}
         onSearchChange={handleSearchChange}
         suggestions={suggestions}
         onSuggestionClick={handleSuggestionClick}
-      />
+      />}
 
-      {[...guesses].reverse().map((guess, index) => (
+      {/* {[...guesses].reverse().map((guess, index) => (
+        <CluesRow
+          key={index}
+          city={guess}
+          challenge={challenge}
+          clues={clues}
+          isFirstRow={index === 0}
+        />
+      ))} */}
+      {/* if alreadyFound is true, display the clue rows like guesses is challenge */ }
+      {[...guesses, ...(alreadyFound ? [challenge] : [])].reverse().map((guess, index) => (
         <CluesRow
           key={index}
           city={guess}

@@ -1,0 +1,35 @@
+:root {
+  --bg: #ffffff;
+  --bg-header: #f0f0f0;
+  --header-border: #e0e0e0;
+  --text: #1a1a1a;
+}
+
+[data-theme='dark'] {
+  --bg: #1a1a1a;
+  --bg-header: #212121;
+  --header-border: #333333;
+  --text: #ffffff;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Add space between elements inside */
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  border: 1px solid var(--header-border);
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.delete {
+  background-color: #ef3240;
+}
+
+.reload {
+  background-color: #007bff;
+}
