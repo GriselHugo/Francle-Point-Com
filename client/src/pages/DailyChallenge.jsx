@@ -66,19 +66,10 @@ function DailyChallenge({ challenge }) {
         </div>
       )}
 
+      {/* Utilisation a des fins de tests */}
       {(alreadyFound || winner) && (
-        // <button
-        //   className="reset-button"
-        //   onClick={() => {
-        //     setWinner(null);
-        //     setAlreadyFound(false);
-        //     setResetGame(!resetGame);
-        //   }}
-        // >
-        //   Rejouer
-        // </button>
         <Button
-          label="Rejouer"
+          label="Rejouer (Test)"
           className="reload"
           onClick={() => {
             setWinner(null);
