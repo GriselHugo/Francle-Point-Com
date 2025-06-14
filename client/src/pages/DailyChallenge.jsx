@@ -5,6 +5,8 @@ import "../styles/dailyChallenge.css";
 import Game from "../components/Game";
 import Button from "../components/Button";
 
+import { reloadOutline } from "ionicons/icons";
+
 import { useDailyChallengeStats } from "../utils/useLocalStorageStats";
 
 function DailyChallenge({ challenge }) {
@@ -12,6 +14,7 @@ function DailyChallenge({ challenge }) {
 
   const [winner, setWinner] = useState(null);
   const [stats, setStats] = useDailyChallengeStats();
+
   const [alreadyFound, setAlreadyFound] = useState(stats.lastPlayedDate === today);
   const [resetGame, setResetGame] = useState(false);
 
@@ -58,7 +61,7 @@ function DailyChallenge({ challenge }) {
   return (
     <div className="daily-challenge">
       <h1>Devine la ville de France !</h1>
-      <Game key={resetGame} challenge={challenge} onWin={handleWin} alreadyFound={alreadyFound} />
+      <Game key={resetGame} challenge={challenge} onWin={handleWin} disabledSearchBar={alreadyFound} alreadyFound={alreadyFound} />
 
       {winner && (
         <div className="victory-message">
@@ -71,6 +74,7 @@ function DailyChallenge({ challenge }) {
         <Button
           label="Rejouer (Test)"
           className="reload"
+          icon={reloadOutline}
           onClick={() => {
             setWinner(null);
             setAlreadyFound(false);

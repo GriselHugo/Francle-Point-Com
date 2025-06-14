@@ -1,18 +1,18 @@
 import React from "react";
 
 import { IonIcon } from '@ionic/react';
-import { trashOutline, reloadOutline } from 'ionicons/icons';
+// import { trashOutline, reloadOutline } from 'ionicons/icons';
 
 import "../styles/button.css";
 
-function Button({ onClick, label, className = "", disabled = false }) {
+function Button({ onClick, label, className = "", icon, disabled = false }) {
   return (
     <button
       onClick={onClick}
       className={`button ${className}`}
       disabled={disabled}
     >
-      <IonIcon icon={className === "delete" ? trashOutline : reloadOutline} />
+      <IonIcon icon={icon} />
       {label}
     </button>
   );

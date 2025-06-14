@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --bg: #ffffff;
   --text: #1a1a1a;
 }
@@ -6,7 +6,7 @@
 [data-theme='dark'] {
   --bg: #1a1a1a;
   --text: #ffffff;
-}
+} */
 
 .stats {
   display: flex;

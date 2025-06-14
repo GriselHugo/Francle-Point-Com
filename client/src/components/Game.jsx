@@ -5,7 +5,7 @@ import apiService from "../services/api";
 
 import "../styles/game.css";
 
-function Game({ challenge, onWin, alreadyFound }) {
+function Game({ challenge, onWin, disabledSearchBar = false, alreadyFound = false }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [guesses, setGuesses] = useState([]);
@@ -70,7 +70,7 @@ function Game({ challenge, onWin, alreadyFound }) {
   return (
     <div className="game-container">
 
-      {alreadyFound === false && <SearchBar
+      {disabledSearchBar === false && <SearchBar
         searchTerm={searchTerm}
         onSearchChange={handleSearchChange}
         suggestions={suggestions}

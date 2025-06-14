@@ -4,9 +4,9 @@ import { chevronUpOutline, chevronDownOutline } from "ionicons/icons";
 
 function ClueBox({ label, selectedValue, challengeValue }) {
   const comparison =
-    typeof selectedValue === "string"
-      ? selectedValue.localeCompare(challengeValue)
-      : parseFloat(selectedValue) - parseFloat(challengeValue);
+    label === "Habitants"
+      ? parseInt(selectedValue.replace(/\s/g, "")) - parseInt(challengeValue.replace(/\s/g, ""))
+      : selectedValue.localeCompare(challengeValue);
 
   let clueClass = "clue";
   if (comparison === 0) clueClass += " correct";

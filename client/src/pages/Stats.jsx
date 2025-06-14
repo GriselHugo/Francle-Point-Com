@@ -3,6 +3,8 @@ import React from "react";
 import { useDailyChallengeStats } from "../utils/useLocalStorageStats";
 import Button from "../components/Button";
 
+import { trashOutline } from "ionicons/icons";
+
 import "../styles/stats.css";
 
 function Stats() {
@@ -35,6 +37,7 @@ function Stats() {
             }
             label="Réinitialiser les statistiques"
             className="delete"
+            icon={trashOutline}
           />
         </div>
       </div>
