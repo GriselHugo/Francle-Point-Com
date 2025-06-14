@@ -103,7 +103,7 @@ router.get('/get-personalized-game', (req, res) => {
       return;
     }
 
-    res.status(200).send(results);
+    res.status(200).send(results[0]);
   });
 });
 

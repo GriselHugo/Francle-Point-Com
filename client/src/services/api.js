@@ -17,7 +17,7 @@ class ApiService {
         try {
           const response = await this.apiService.get('/get-daily-challenge');
           console.log('Today\'s challenge fetched successfully:', response.data);
-          console.log('Today\'s challenge fetched successfully:', response);
+          // console.log('Today\'s challenge fetched successfully:', response);
           return response.data;
         } catch (error) {
           console.error('Error fetching today\'s challenge:', error);
@@ -25,6 +25,32 @@ class ApiService {
         }
       }
     };
+  }
+
+  /* getPersonalizedChallenge
+   * Fetches a personalized challenge based on the user's preferences.
+   * Returns an object with a method to get the personalized challenge.
+   */
+  async getPersonalizedChallenge({ region_code, department_code, population }) {
+    try {
+      const rawParams = {
+        region_code,
+        department_code,
+        population,
+      };
+
+      const params = Object.fromEntries(
+        Object.entries(rawParams).filter(([_, v]) => v != null)
+      );
+
+      const response = await this.apiService.get('/get-personalized-game', { params });
+
+      console.log('Personalized challenge fetched successfully:', response.data);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching personalized challenge:', error);
+      throw error;
+    }
   }
 
   /* SearchCities
