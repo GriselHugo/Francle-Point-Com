@@ -43,7 +43,7 @@ function PersonalizeGame() {
       const result = await apiService.getPersonalizedChallenge({
         region_code: region || null,
         department_code: department || null,
-        population: population || null,
+        population: (population && population > 0) ? population : null,
       });
       setPersonalizedChallenge(result);
     } catch (err) {
@@ -56,37 +56,46 @@ function PersonalizeGame() {
   return (
     <div className="personalize-game">
       <h1>Partie personnalisée</h1>
-      <p>Choisissez vos préférences pour personnaliser votre expérience de jeu.</p>
       {/* Add your personalization options here */}
 
         {!personalizedChallenge && (
         <div className="personalize-game-options-container">
-          <h2>Choisissez une région (facultatif)</h2>
-          <select value={region} onChange={(e) => {
-            setRegion(e.target.value);
-            setDepartment(''); // reset department if region changes
-          }}>
-            <option value="">-- Toutes les régions --</option>
-            {regions.map(r => (
-              <option key={r.code} value={r.code}>{r.nom}</option>
-            ))}
-          </select>
+        <h2>Choisissez vos préférences pour personnaliser votre expérience de jeu :</h2>
 
-          <h2>Choisissez un département</h2>
-          <select value={department} onChange={(e) => setDepartment(e.target.value)}>
-            <option value="">-- Sélectionner un département --</option>
-            {filteredDepartments.map(dep => (
-              <option key={dep.code} value={dep.code}>{dep.code}- {dep.nom}</option>
-            ))}
-          </select>
+          <ul className="personalize-game-grid">
+            <li>
+            - Choisissez une région :<br></br>
+            <select value={region} onChange={(e) => {
+              setRegion(e.target.value);
+              setDepartment(''); // reset department if region changes
+            }}>
+              <option value="">-- Toutes les régions --</option>
+              {regions.map(r => (
+                <option key={r.code} value={r.code}>{r.nom}</option>
+              ))}
+            </select>
+            </li>
 
-          <h2>Population max (optionnel)</h2>
-          <input
-            type="number"
-            placeholder="Ex: 100000"
-            value={population}
-            onChange={(e) => setPopulation(e.target.value)}
-          />
+            <li>
+            - Choisissez un département :<br></br>
+            <select value={department} onChange={(e) => setDepartment(e.target.value)}>
+              <option value="">-- Tous les départements --</option>
+              {filteredDepartments.map(dep => (
+                <option key={dep.code} value={dep.code}>{dep.code}- {dep.nom}</option>
+              ))}
+            </select>
+            </li>
+
+            <li>
+            - Parmi les [x] villes les plus peuplées :<br></br>
+            <input
+              type="number"
+              placeholder="-- Toutes --"
+              value={population}
+              onChange={(e) => setPopulation(e.target.value)}
+            />
+            </li>
+          </ul>
 
           <br /><br />
 
@@ -106,7 +115,7 @@ function PersonalizeGame() {
         {personalizedChallenge && (
           <Game key={resetGame} challenge={personalizedChallenge} onWin={handleWin} disabledSearchBar={found} />
         )}
-        
+
         {personalizedChallenge && found && (
           <Button
             label="Rejouer"
