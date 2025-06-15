@@ -6,3 +6,8 @@
   color: var(--text);
   padding: 0;
 }
+
+.daily-challenge-description {
+  width: 100%;
+  max-width: 960px;
+}

@@ -83,7 +83,7 @@ function PersonalizeGame() {
             </li>
 
             <li>
-            - Parmi les [x] villes les plus peuplées :<br></br>
+            - Choisir parmi les [x] villes les plus peuplées :<br></br>
             <input
               type="number"
               placeholder="-- Toutes --"

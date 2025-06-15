@@ -1,6 +1,6 @@
 import React from "react";
 import { IonIcon } from "@ionic/react";
-import { chevronUpOutline, chevronDownOutline } from "ionicons/icons";
+import { addOutline, removeOutline } from "ionicons/icons";
 
 function ClueBox({ label, selectedValue, challengeValue }) {
   const comparison =
@@ -16,13 +16,13 @@ function ClueBox({ label, selectedValue, challengeValue }) {
   return (
     <div className={clueClass}>
       <div className="chevron-up">
-        {showChevron && comparison < 0 && <IonIcon icon={chevronUpOutline} />}
+        {showChevron && comparison < 0 && <IonIcon icon={addOutline} />}
       </div>
       <div className="clue-text">
         <div className="value">{selectedValue}</div>
       </div>
       <div className="chevron-down">
-        {showChevron && comparison > 0 && <IonIcon icon={chevronDownOutline} />}
+        {showChevron && comparison > 0 && <IonIcon icon={removeOutline} />}
       </div>
     </div>
   );

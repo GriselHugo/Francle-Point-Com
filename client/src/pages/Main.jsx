@@ -4,6 +4,7 @@ import { useTheme } from '../utils/theme';
 import apiService from '../services/api';
 
 import Header from './Header';
+import Help from './Help';
 import DailyChallenge from './DailyChallenge';
 import PersonalizedGame from './PersonalizedGame';
 import Stats from './Stats';
@@ -34,6 +35,7 @@ function Main() {
       <Header page={page} onNavigate={setPage} />
 
       {page === 'loading' && <h1>Chargement...</h1>}
+      {page === 'help' && <Help />}
       {page === 'dailyChallenge' && <DailyChallenge challenge={dailyChallenge} />}
       {page === 'personalizedGame' && <PersonalizedGame />}
       {page === 'stats' && <Stats />}

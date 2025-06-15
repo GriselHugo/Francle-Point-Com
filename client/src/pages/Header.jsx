@@ -4,7 +4,7 @@ import { useTheme } from "../utils/theme";
 import "../styles/header.css";
 
 import { IonIcon } from '@ionic/react';
-import { sunnyOutline, moonOutline, earthOutline, colorWandOutline, statsChartOutline } from 'ionicons/icons';
+import { sunnyOutline, moonOutline, helpCircleOutline, earthOutline, colorWandOutline, statsChartOutline } from 'ionicons/icons';
 
 function Header({ page, onNavigate }) {
   const { theme, toggleTheme } = useTheme();
@@ -17,11 +17,11 @@ function Header({ page, onNavigate }) {
 
       <nav className="nav">
       <button
-        className={isActive("personalizedGame")}
-        onClick={() => onNavigate("personalizedGame")}
-        data-label="Partie personalisée"
+        className={isActive("help")}
+        onClick={() => onNavigate("help")}
+        data-label="Tutoriel"
       >
-        <IonIcon icon={colorWandOutline} />
+        <IonIcon icon={helpCircleOutline} />
       </button>
 
       <button
@@ -30,6 +30,14 @@ function Header({ page, onNavigate }) {
         data-label="Défi du jour"
       >
         <IonIcon icon={earthOutline} />
+      </button>
+
+      <button
+        className={isActive("personalizedGame")}
+        onClick={() => onNavigate("personalizedGame")}
+        data-label="Partie personalisée"
+      >
+        <IonIcon icon={colorWandOutline} />
       </button>
 
       <button

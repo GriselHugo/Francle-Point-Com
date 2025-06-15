@@ -60,6 +60,12 @@ function DailyChallenge({ challenge }) {
   return (
     <div className="daily-challenge">
       <h1>Devine la ville de France !</h1>
+      <div className="daily-challenge-description">
+        <h2>
+          Chaque jour, un défi unique t'attend. Tu dois deviner la ville de France
+          du jour en utilisant le moins d'indices possible. Bonne chance !
+        </h2>
+      </div>
       <Game key={resetGame} challenge={challenge} onWin={handleWin} disabledSearchBar={alreadyFound} alreadyFound={alreadyFound} />
 
       {winner && (
