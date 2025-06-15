@@ -77,16 +77,6 @@ function Game({ challenge, onWin, disabledSearchBar = false, alreadyFound = fals
         onSuggestionClick={handleSuggestionClick}
       />}
 
-      {/* {[...guesses].reverse().map((guess, index) => (
-        <CluesRow
-          key={index}
-          city={guess}
-          challenge={challenge}
-          clues={clues}
-          isFirstRow={index === 0}
-        />
-      ))} */}
-      {/* if alreadyFound is true, display the clue rows like guesses is challenge */ }
       {[...guesses, ...(alreadyFound ? [challenge] : [])].reverse().map((guess, index) => (
         <CluesRow
           key={index}

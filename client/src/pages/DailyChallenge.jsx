@@ -54,7 +54,6 @@ function DailyChallenge({ challenge }) {
 
   const handleWin = (winningCity, hintsUsed) => {
     setWinner(winningCity);
-    // Update the daily challenge stats
     updateStats(hintsUsed);
   };
 
@@ -69,7 +68,7 @@ function DailyChallenge({ challenge }) {
         </div>
       )}
 
-      {/* Utilisation a des fins de tests */}
+      {/* Utilisation à des fins de test */}
       {(alreadyFound || winner) && (
         <Button
           label="Rejouer (Test)"
@@ -82,6 +81,7 @@ function DailyChallenge({ challenge }) {
           }}
         />
       )}
+      {/* Utilisation à des fins de test */}
     </div>
   );
 }

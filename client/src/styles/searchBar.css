@@ -1,17 +1,3 @@
-/* :root {
-  --bg: #ffffff;
-  --bg-header: #f0f0f0;
-  --header-border: #e0e0e0;
-  --text: #1a1a1a;
-}
-
-[data-theme='dark'] {
-  --bg: #1a1a1a;
-  --bg-header: #212121;
-  --header-border: #333333;
-  --text: #ffffff;
-} */
-
 .search-bar {
   position: relative;
   width: 400px;

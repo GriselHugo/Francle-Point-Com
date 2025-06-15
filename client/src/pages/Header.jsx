@@ -6,9 +6,6 @@ import "../styles/header.css";
 import { IonIcon } from '@ionic/react';
 import { sunnyOutline, moonOutline, earthOutline, colorWandOutline, statsChartOutline } from 'ionicons/icons';
 
-// import { barChartOutline } from "ionicons/icons";
-// import { eyedropOutline } from "ionicons/icons";
-
 function Header({ page, onNavigate }) {
   const { theme, toggleTheme } = useTheme();
 
@@ -18,7 +15,6 @@ function Header({ page, onNavigate }) {
     <header className={`header ${theme}`}>
       <h1 className="title">FRANCLE-POINT-COM</h1>
 
-      {/* Navigation */}
       <nav className="nav">
       <button
         className={isActive("personalizedGame")}
@@ -26,7 +22,6 @@ function Header({ page, onNavigate }) {
         data-label="Partie personalisée"
       >
         <IonIcon icon={colorWandOutline} />
-        {/* <IonIcon icon={eyedropOutline} /> */}
       </button>
 
       <button
@@ -42,13 +37,10 @@ function Header({ page, onNavigate }) {
         onClick={() => onNavigate("stats")}
         data-label="Statistiques"
       >
-        {/* <IonIcon icon={barChartOutline} /> */}
         <IonIcon icon={statsChartOutline} />
       </button>
       </nav>
 
-
-      {/* Theme */}
       <button className="themeToggle" onClick={toggleTheme}>
         <IonIcon icon={theme === "light" ? moonOutline : sunnyOutline} />
       </button>

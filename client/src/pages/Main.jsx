@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../utils/theme';
 
-// import api
 import apiService from '../services/api';
 
 import Header from './Header';
@@ -15,23 +14,6 @@ function Main() {
 
   const [dailyChallenge, setDailyChallenge] = useState(null);
 
-  // Fetch the daily challenge when the component mounts
-  // React.useEffect(() => {
-  //   const fetchDailyChallenge = async () => {
-  //     try {
-  //       // const challenge = await apiService.getDailyChallenge().getTodayChallenge();
-  //       const challenge = await apiService.getDailyChallenge().getTodayChallenge();
-  //       setDailyChallenge(challenge);
-  //       setPage('dailyChallenge');
-  //     } catch (error) {
-  //       setTimeout(() => fetchDailyChallenge(), 1000);
-  //       // console.error('Error fetching daily challenge:', error);
-  //       // setPage('stats'); // Fallback to stats if there's an error
-  //     }
-  //   };
-
-  //   fetchDailyChallenge();
-  // }, []);
   useEffect(() => {
     const fetchDailyChallenge = async () => {
       try {

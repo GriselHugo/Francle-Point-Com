@@ -13,7 +13,6 @@ import { departments } from "../data/departments";
 import { colorWandOutline, reloadOutline } from "ionicons/icons";
 
 function PersonalizeGame() {
-
   const [region, setRegion] = useState('');
   const [department, setDepartment] = useState('');
   const [population, setPopulation] = useState('');
@@ -25,9 +24,7 @@ function PersonalizeGame() {
   const [found, setFound] = useState(false);
 
   const handleWin = () => {
-    // setDisabledSearchBar(true);
     setFound(true);
-    // setPersonalizedChallenge(null);
   }
 
   const filteredDepartments = region
@@ -56,7 +53,6 @@ function PersonalizeGame() {
   return (
     <div className="personalize-game">
       <h1>Partie personnalisée</h1>
-      {/* Add your personalization options here */}
 
         {!personalizedChallenge && (
         <div className="personalize-game-options-container">
@@ -67,7 +63,7 @@ function PersonalizeGame() {
             - Choisissez une région :<br></br>
             <select value={region} onChange={(e) => {
               setRegion(e.target.value);
-              setDepartment(''); // reset department if region changes
+              setDepartment('');
             }}>
               <option value="">-- Toutes les régions --</option>
               {regions.map(r => (
@@ -125,7 +121,6 @@ function PersonalizeGame() {
               setResetGame(!resetGame);
               setPersonalizedChallenge(null);
               setFound(false);
-              // setDisabledSearchBar(false);
             }}
           />
         )}
@@ -134,9 +129,6 @@ function PersonalizeGame() {
             🎉 Bravo ! Vous avez trouvé la ville personnalisée !
           </div>
         )}
-
-      {/* Add any additional components or information here */}
-
     </div>
   );
 }

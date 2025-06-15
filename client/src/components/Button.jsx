@@ -1,7 +1,6 @@
 import React from "react";
 
 import { IonIcon } from '@ionic/react';
-// import { trashOutline, reloadOutline } from 'ionicons/icons';
 
 import "../styles/button.css";
 
